@@ -1,0 +1,2 @@
+#!/bin/bashi
+gcc -5 $CFILE
