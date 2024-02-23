@@ -1,44 +1,49 @@
 #include "main.h"
-
 /**
- * jack_bauer - prints sign of number
+ * tables - main function
  *
- * Return: 0
+ * Return: Always 0
  */
 
+int tables(void)
+{
+	times_table();
+
+	return (0);
+
+}
+/**
+ * times_table - prints the  times table
+ */
 void times_table(void)
 {
-	int i = 0;
-	int j = 0;
-	int b = 0;
+	int i, j;
 
-	for (i=0; i < 10; i++)
+	int result;
+
+	for (i = 0; i <= 9; i++)
 	{
-		j = 0;
-		for (j=0; j < 10; j++)
+		for (j = 0; j <= 9; j++)
 		{
-			b = i * j;
-		}
+			result = i * j;
 
-		if (i == 0)
-		{
-			putchar ('0' + b);
-		}
+			if (j > 0)
+			{
+				_putchar(',');
+				_putchar(' ');
 
-		else if ( b <= 9)
-		{
-			_putchar(',');
-			_putchar(' ');
-			_putchar(' ');
-			_putchar('0' + b);
+				if (result < 10)
+				{
+					_putchar(' ');
+				}
+			}
+
+			if (result >= 10)
+			{
+				_putchar(result / 10 + '0');
+			}
+			_putchar(result % 10 + '0');
 		}
-		else if ( b > 9)
-		{
-			_putchar(',');
-			_putchar(' ');
-			_putchar('0' + (b / 10));
-			_putchar('0' + (b % 10));
-		}
+		_putchar('\n');
 	}
-	_putchar ('\n');
 }
