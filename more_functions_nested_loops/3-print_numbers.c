@@ -1,18 +1,20 @@
-#include <ctype.h>
 #include "main.h"
 
 /**
-*print_numbers - fonction that prints the number from 0 to 9
-* Return: no return
-*On error, O is returned, and errno is set appropriately.
-*/
+ * print_numbers - entry point
+ *
+ * Description: prints the numbers from 0 to 9
+ *
+ * Return: 0 for success.
+ */
 
 void print_numbers(void)
 {
-	char i;
+	int i;
 
-	for (i = 48; i <= 57; i++)
+	for (i = 0; i <= 9; i++)
 	{
-		_putchar(i);
+		_putchar(i + '0');
 	}
+	_putchar('\n');
 }
